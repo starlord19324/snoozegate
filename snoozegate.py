@@ -42,22 +42,21 @@ signal_lib = ['0000', '1000', '0100', '0010',
 
 def input_check(signal,value):
     if signal in signal_lib:
-        print(signal)
-        # return signal
+        # print(signal)
+        return signal
     else:
         print('Incorrect instruction')
     if value in range(0,181):
-        print(value)
-        # return value
+        # print(value)
+        return value
     else:
         print('Incorrect value')
 
 
-# def encoder(signal,value):
-    # sig = '00%s00' %(signal)
-    # val =
-    # print(sig,value)
-
+def encoder(signal,value):
+    sig = '00%s00' %(signal)
+    val = ''
+    print(sig,value)
 
 
 def main():
