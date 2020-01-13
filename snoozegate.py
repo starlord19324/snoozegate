@@ -36,15 +36,18 @@
 # would be converted into 8-bit binary
 
 
+# import pylab
+# import numpy
 import random
 
 
+
 signal_lib = ['10001111',
-            '10001100',
-            '10001010',
+            '10001101',
+            '10001011',
             '10001001',
-            '11111010',
-            '11001010',
+            '11111011',
+            '11001011',
             '11111001',
             '11001001']
 
@@ -80,18 +83,44 @@ def encoder(signal,value):
     elif value in range(64, 91):
         val = '0%s' %(val)
     val = '00000000%s' %(val)
-    print(sig, val)
+    # print(sig, val)
+    return sig, val
 
 
-def environment(signal,value):
-    p1 = 0.17
-    p2 = 0.24
+def environment(signal, value):
+    # mode = input('Select the noise mode'
+    #              '[1 - easy (replacing the digits)'
+    #              '2 - medium (additional digits)'
+    #              '3 - hard (combined)]: ')
+    level = int(input('Determine the level of noise (from 1 to 100) : '))
+    k = list(str(signal))
+    l = list(str(value))
+    # trials = 100
+    # digits = ('0', '1')
+    # if level == 1:
+    #     P = random.randrange(0, 101, 3)
+    #     for i in range(len(k)):
+    #         if (k[i] == '0'):
+    #             k[i] == '1'
+    #
+    #
+    #
+    #
+    # elif level == 2:
+    #
+    # elif level == 3:
+    m = ''.join(k)
+    n = ''.join(l)
+    P = random.randint(1, level)
+    print(k, l)
+    print(m, n, P)
 
 
 
 def main():
-    sig, val = input_check()
-    encoder(sig, val)
+    signal, value = input_check()
+    out_sig, out_val = encoder(signal, value)
+    environment(out_sig, out_val)
 
 
 if __name__ == main():
