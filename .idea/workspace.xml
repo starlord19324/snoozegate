@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snoozegate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+            <state relative-caret-position="456">
+              <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -66,7 +66,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -78,6 +77,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -171,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578675349491</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Working on environment">
+      <created>1578933277531</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578933277531</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -189,8 +196,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.8949314" weight="0.32910052" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.7064414" visible="true" weight="0.32910052" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.2935586" side_tool="true" visible="true" weight="0.32910052" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.7059134" visible="true" weight="0.31534392" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.29408658" side_tool="true" visible="true" weight="0.31534392" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.8595565" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -252,13 +259,14 @@
     <MESSAGE value="Some notes for README.md" />
     <MESSAGE value="Some notes for README.md [2]" />
     <MESSAGE value="Encoder has been configured. Also some minor fixes have been done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Encoder has been configured. Also some minor fixes have been done." />
+    <MESSAGE value="Working on environment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on environment" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/snoozegate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+        <state relative-caret-position="456">
+          <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
         </state>
       </provider>
     </entry>

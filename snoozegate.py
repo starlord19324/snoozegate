@@ -114,6 +114,7 @@ def environment(signal, value):
     P = random.randint(1, level)
     print(k, l)
     print(m, n, P)
+    Z = random.choice(0, len(k))
 
 
 
