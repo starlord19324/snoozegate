@@ -88,34 +88,13 @@ def encoder(signal,value):
 
 
 def environment(signal, value):
-    # mode = input('Select the noise mode'
-    #              '[1 - easy (replacing the digits)'
-    #              '2 - medium (additional digits)'
-    #              '3 - hard (combined)]: ')
-    level = int(input('Determine the level of noise (from 1 to 100) : '))
-    k = list(str(signal))
-    l = list(str(value))
-    # trials = 100
-    # digits = ('0', '1')
-    # if level == 1:
-    #     P = random.randrange(0, 101, 3)
-    #     for i in range(len(k)):
-    #         if (k[i] == '0'):
-    #             k[i] == '1'
-    #
-    #
-    #
-    #
-    # elif level == 2:
-    #
-    # elif level == 3:
-    m = ''.join(k)
-    n = ''.join(l)
-    P = random.randint(1, level)
-    print(k, l)
-    print(m, n, P)
-    Z = random.choice(0, len(k))
+    s = list(signal)
+    v = list(value)
+    for index,item in enumerate(s):
+        print(index,item)
 
+
+    print(s,v)
 
 
 def main():
