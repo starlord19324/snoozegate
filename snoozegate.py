@@ -59,7 +59,7 @@ def input_check():
     signal = '10001001'
     value = int('31')
     if signal in signal_lib and value in range(0, 91):
-        print(signal,value)
+        # print(signal,value)
         return signal, value
     else:
         print('Incorrect instruction')

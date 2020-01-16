@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e3663c7-606d-4574-8c8e-084c98a8fe58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snoozegate.py" beforeDir="false" afterPath="$PROJECT_DIR$/snoozegate.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snoozegate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="239" column="8" selection-start-line="239" selection-start-column="8" selection-end-line="239" selection-end-column="8" />
+            <state relative-caret-position="184">
+              <caret line="61" selection-start-line="61" selection-end-line="61" selection-end-column="29" />
               <folding>
                 <element signature="e#696#702#0" expanded="true" />
               </folding>
@@ -203,7 +202,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579110959771</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Shitworking on environment - deadly progress T_T">
+      <created>1579191218745</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1579191218747</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1">
+      <created>1579191256397</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579191256397</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -286,13 +299,14 @@
     <MESSAGE value="Encoder has been configured. Also some minor fixes have been done." />
     <MESSAGE value="Working on environment" />
     <MESSAGE value="Shitworking on environment - deadly progress T_T" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shitworking on environment - deadly progress T_T" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/snoozegate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="239" column="8" selection-start-line="239" selection-start-column="8" selection-end-line="239" selection-end-column="8" />
+        <state relative-caret-position="184">
+          <caret line="61" selection-start-line="61" selection-end-line="61" selection-end-column="29" />
           <folding>
             <element signature="e#696#702#0" expanded="true" />
           </folding>
