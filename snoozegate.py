@@ -38,7 +38,7 @@
 
 # import pylab
 # import numpy
-import re
+
 import random
 
 
@@ -160,6 +160,8 @@ def zeroes_environment(signal, value):
         else:
             pass
 
+    return result_m, result_v
+
 
 def ones_environment(signal, value):
 
@@ -230,6 +232,8 @@ def ones_environment(signal, value):
             print(result_v)
         else:
             pass
+
+    return result_m, result_v
 
 
 
