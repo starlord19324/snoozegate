@@ -1,46 +1,27 @@
-# Just code
-# GUI
-# Drone actions modulation
-
-
-# Signals library
-# Encoder and decoder
-# Few levels of noised environments
-# Modulation of drone actions
-
-
-# Inputting the signal
-# Encoding the signal
-# Stressing the signal (noised environment)
-# Decoding the signal
-# Sending the signal to the drone
-
-
-### Signals library:
-#
-## Actions:
-# Only binary values
-# in 4 binary bits
-# 10001111 - dry-down
-# 10001100 - dry-up
-# 10001010 - dry-left
-# 10001001 - dry-right
-# 11111010 - left+down
-# 11001010 - left+up
-# 11111001 - right+down
-# 11001001 - right+up
-#
-## Values:
-# Only positive integer values in degrees
-# from 0 to 180
-# would be converted into 8-bit binary
-
-
-# import pylab
-# import numpy
-
+# -*- coding: utf-8 -*-
 import random
 
+####
+# Copyright
+# Anton Kharchenko
+# National Aviation University
+# 2019-2020 (c)
+
+####
+#
+# This matrix contains conventional signals for control of the UAV model
+# UAV model will be released soon
+# in plans: add octal and hexadecimal libs for variation of signals.
+# Explanation of signals meaning:
+# '10001111' - down
+# '10001101' - up
+# '10001011' - left
+# '10001001' - right
+# '11111011' - left+down
+# '11001011' - left+up
+# '11111001' - right+down
+# '11001001' - right+up
+#
 
 
 signal_lib = ['10001111',
@@ -52,6 +33,12 @@ signal_lib = ['10001111',
             '11111001',
             '11001001']
 
+####
+#
+# input_check function performs verification of input data
+# e.g. signal is in library, value (angle of rotation) is in correct range
+# will be removed or modified when GUI will be ready - for this stage is useful for testing
+#
 
 def input_check():
     # signal = input('Enter the signal here: ')
@@ -64,6 +51,12 @@ def input_check():
     else:
         print('Incorrect instruction')
 
+####
+#
+# encoder function encodes obtained value into binary system and adds
+# excessive digits to prevent signal noising
+# will be also modified for octal and hexadecimal signal systems soon
+#
 
 def encoder(signal,value):
     sig = '00000000%s' %(signal)
@@ -89,6 +82,13 @@ def encoder(signal,value):
 
 
 
+####
+#
+# zeroes_environment function simulates noisy environment to make signal distorted
+# converts random '0' to '1' and returns distorted signal
+# can be used in pair with ones_environment function to increase the distortion level
+# will be improved and modified for octal and hexadecimal systems
+#
 
 def zeroes_environment(signal, value):
 
@@ -163,6 +163,15 @@ def zeroes_environment(signal, value):
     return result_m, result_v
 
 
+####
+#
+# ones_environment function simulates noisy environment to make signal distorted
+# converts random '1' to '0' and returns distorted signal
+# can be used in pair with zeroes_environment function to increase the distortion level
+# will be improved and modified for octal and hexadecimal systems
+#
+
+
 def ones_environment(signal, value):
 
     s = list(signal)
@@ -235,7 +244,10 @@ def ones_environment(signal, value):
 
     return result_m, result_v
 
-
+####
+#
+# main function - runs called functions together in defined sequence
+#
 
 def main():
     signal, value = input_check()
@@ -243,6 +255,11 @@ def main():
     zeroes_environment(out_sig, out_val)
     ones_environment(out_sig, out_val)
 
+
+####
+#
+# call of main function
+#
 
 if __name__ == main():
     main()
