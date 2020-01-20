@@ -13,25 +13,26 @@ import random
 # UAV model will be released soon
 # in plans: add octal and hexadecimal libs for variation of signals.
 # Explanation of signals meaning:
-# '10001111' - down
-# '10001101' - up
-# '10001011' - left
-# '10001001' - right
-# '11111011' - left+down
-# '11001011' - left+up
-# '11111001' - right+down
-# '11001001' - right+up
+# '001' - pitch
+# '010' - heel
+# '100' - yaw
+# command - 8 bit, value - 16 bit
+
+signal_lib = ['001',
+              '010',
+              '100']
+
+# pitch_truth = ['001',
+#                '101']
 #
-
-
-signal_lib = ['10001111',
-            '10001101',
-            '10001011',
-            '10001001',
-            '11111011',
-            '11001011',
-            '11111001',
-            '11001001']
+# heel_truth = ['010',
+#               '011']
+#
+# yaw_truth = ['100',
+#              '110']
+#
+# error_truth = ['000',
+#                '111']
 
 ####
 #
@@ -43,9 +44,9 @@ signal_lib = ['10001111',
 def input_check():
     # signal = input('Enter the signal here: ')
     # value = int(input('Determine the value from 0 to 90 here: '))
-    signal = '10001001'
-    value = int('31')
-    if signal in signal_lib and value in range(0, 91):
+    signal = '001'
+    value = int('154')
+    if signal in signal_lib and value in range(0, 181):
         # print(signal,value)
         return signal, value
     else:
@@ -59,7 +60,7 @@ def input_check():
 #
 
 def encoder(signal,value):
-    sig = '00000000%s' %(signal)
+    sig = '00000%s' %(signal)
     val = bin(value)
     val = val[2:]
     if value in range(0,2):
@@ -74,8 +75,10 @@ def encoder(signal,value):
         val = '000%s' %(val)
     elif value in range(32, 64):
         val = '00%s' %(val)
-    elif value in range(64, 91):
+    elif value in range(64, 128):
         val = '0%s' %(val)
+    elif value in range(128, 181):
+        val = '%s' %(val)
     val = '00000000%s' %(val)
     # print(sig, val)
     return sig, val
@@ -171,7 +174,6 @@ def zeroes_environment(signal, value):
 # will be improved and modified for octal and hexadecimal systems
 #
 
-
 def ones_environment(signal, value):
 
     s = list(signal)
@@ -244,6 +246,48 @@ def ones_environment(signal, value):
 
     return result_m, result_v
 
+
+pitch_truth = ['001',
+               '101']
+
+heel_truth = ['010',
+              '011']
+
+yaw_truth = ['100',
+             '110']
+
+error_truth = ['000',
+               '111']
+
+
+####
+#
+# decoder function decodes distorted signals
+# removes redundant digits
+# performs error correction in correspondence with truth tables
+# returns command and value after correction
+#
+
+def decoder_lv1(signal, value):
+    d_signal = signal[5:]
+    d_value = int(value[8:], 2)
+    # d_value = '228'
+    if d_signal in error_truth:
+        d_signal = 'Incorrect instruction: '
+    elif d_signal in pitch_truth:
+        d_signal = 'Pitch: '
+    elif d_signal in heel_truth:
+        d_signal = 'Heel: '
+    elif d_signal in yaw_truth:
+        d_signal = 'Yaw: '
+    if d_value in range(0, 181):
+        d_value = '%s degrees' %(d_value)
+    else:
+        d_value = ('Angle (%s degrees) is out of range' %(d_value))
+    print(d_signal, d_value)
+
+
+
 ####
 #
 # main function - runs called functions together in defined sequence
@@ -252,8 +296,9 @@ def ones_environment(signal, value):
 def main():
     signal, value = input_check()
     out_sig, out_val = encoder(signal, value)
-    zeroes_environment(out_sig, out_val)
-    ones_environment(out_sig, out_val)
+    # zeroes_environment(out_sig, out_val)
+    c_sig, c_val = ones_environment(out_sig, out_val)
+    decoder_lv1(c_sig, c_val)
 
 
 ####
