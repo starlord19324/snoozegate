@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
+from collections import Counter
 
 ####
 # Copyright
@@ -42,13 +43,15 @@ signal_lib = ['001',
 #
 
 def input_check():
-    # signal = input('Enter the signal here: ')
-    # value = int(input('Determine the value from 0 to 90 here: '))
-    signal = '001'
-    value = int('154')
-    if signal in signal_lib and value in range(0, 181):
+    # action = input('Enter the action here: ')
+    # angle = int(input('Determine the angle from 0 to 90 here: '))
+    # acceleration = int(input('Determine the value from 0 to 90 here: '))
+    action = '001'
+    angle = int('154')
+    acceleration = int('51')
+    if action in signal_lib and angle in range(0, 181) and acceleration in range(1, 256):
         # print(signal,value)
-        return signal, value
+        return action, angle, acceleration
     else:
         print('Incorrect instruction')
 
@@ -59,29 +62,54 @@ def input_check():
 # will be also modified for octal and hexadecimal signal systems soon
 #
 
-def encoder(signal,value):
-    sig = '00000%s' %(signal)
-    val = bin(value)
-    val = val[2:]
-    if value in range(0,2):
-        val = '0000000%s' %(val)
-    elif value in range(2, 4):
-        val = '000000%s' %(val)
-    elif value in range(4, 8):
-        val = '00000%s' %(val)
-    elif value in range(8, 16):
-        val = '0000%s' %(val)
-    elif value in range(16, 32):
-        val = '000%s' %(val)
-    elif value in range(32, 64):
-        val = '00%s' %(val)
-    elif value in range(64, 128):
-        val = '0%s' %(val)
-    elif value in range(128, 181):
-        val = '%s' %(val)
-    val = '00000000%s' %(val)
-    # print(sig, val)
-    return sig, val
+def encoder(action, angle, acceleration):
+    act = '00000%s' %(action)
+
+    ang = bin(angle)
+    ang = ang[2:]
+
+    if angle in range(0, 2):
+        ang = '0000000%s' % (ang)
+    elif angle in range(2, 4):
+        ang = '000000%s' % (ang)
+    elif angle in range(4, 8):
+        ang = '00000%s' % (ang)
+    elif angle in range(8, 16):
+        ang = '0000%s' % (ang)
+    elif angle in range(16, 32):
+        ang = '000%s' % (ang)
+    elif angle in range(32, 64):
+        ang = '00%s' % (ang)
+    elif angle in range(64, 128):
+        ang = '0%s' % (ang)
+    elif angle in range(128, 181):
+        ang = '%s' % (ang)
+    ang = '00000000%s' %(ang)
+
+
+    acc = bin(acceleration)
+    acc = acc[2:]
+
+    if acceleration in range(0, 2):
+        acc = '0000000%s' % (acc)
+    elif acceleration in range(2, 4):
+        acc = '000000%s' % (acc)
+    elif acceleration in range(4, 8):
+        acc = '00000%s' % (acc)
+    elif acceleration in range(8, 16):
+        acc = '0000%s' % (acc)
+    elif acceleration in range(16, 32):
+        acc = '000%s' % (acc)
+    elif acceleration in range(32, 64):
+        acc = '00%s' % (acc)
+    elif acceleration in range(64, 128):
+        acc = '0%s' % (acc)
+    elif acceleration in range(128, 181):
+        acc = '%s' % (acc)
+    acc = '00000000%s' %(acc)
+
+    # print(act, ang, acc)
+    return act, ang, acc
 
 
 
@@ -93,22 +121,27 @@ def encoder(signal,value):
 # will be improved and modified for octal and hexadecimal systems
 #
 
-def zeroes_environment(signal, value):
+def zeroes_environment(signal, value, acceleration):
 
     s = list(signal)
     v = list(value)
+    a = list(acceleration)
 
     matrix_s = []
     matrix_v = []
+    matrix_a = []
 
     for index, item in enumerate(s, 1):
         mask1 = [index,item]
         matrix_s.append(mask1)
 
-
     for index, item in enumerate(v, 1):
         mask2 = [index,item]
         matrix_v.append(mask2)
+
+    for index, item in enumerate(a, 1):
+        mask3 = [index,item]
+        matrix_a.append(mask3)
 
     A = '1'
     N = 0
@@ -163,7 +196,33 @@ def zeroes_environment(signal, value):
         else:
             pass
 
-    return result_m, result_v
+    A = '1'
+    N = 0
+    while (N < (len(matrix_a)-1)):
+        z3 = random.randint(0, len(matrix_a) - 1)
+        k3 = matrix_s[z3][1]
+        if (k3 == '0'):
+            N = len(matrix_a)
+            mask_a = []
+            mask_a.append(z3)
+            mask_a.append(A)
+            if (z3 == 0):
+                matrix_s[z3].clear()
+                matrix_s[z3].extend(mask_a)
+            elif (z3 > 0):
+                matrix_a[z3 - 1].clear()
+                matrix_a[z3 - 1].extend(mask_a)
+            L = 0
+            result_ma = []
+            while L < len(matrix_a):
+                result_ma.append(matrix_a[L][1])
+                L = L + 1
+            result_a = ''.join(result_ma)
+            print(result_a)
+        else:
+            pass
+
+    return result_m, result_v, result_a
 
 
 ####
@@ -174,22 +233,27 @@ def zeroes_environment(signal, value):
 # will be improved and modified for octal and hexadecimal systems
 #
 
-def ones_environment(signal, value):
+def ones_environment(signal, value, acceleration):
 
     s = list(signal)
     v = list(value)
+    a = list(acceleration)
 
     matrix_s = []
     matrix_v = []
+    matrix_a = []
 
     for index, item in enumerate(s, 1):
         mask1 = [index,item]
         matrix_s.append(mask1)
 
-
     for index, item in enumerate(v, 1):
         mask2 = [index,item]
         matrix_v.append(mask2)
+
+    for index, item in enumerate(a, 1):
+        mask3 = [index,item]
+        matrix_a.append(mask3)
 
     A = '0'
     N = 0
@@ -244,7 +308,33 @@ def ones_environment(signal, value):
         else:
             pass
 
-    return result_m, result_v
+    A = '0'
+    N = 0
+    while (N < (len(matrix_a)-1)):
+        z3 = random.randint(0, len(matrix_a) - 1)
+        k3 = matrix_a[z3][1]
+        if (k3 == '1'):
+            N = len(matrix_a)
+            mask_a = []
+            mask_a.append(z3)
+            mask_a.append(A)
+            if (z3 == 0):
+                matrix_s[z3].clear()
+                matrix_s[z3].extend(mask_a)
+            elif (z3 > 0):
+                matrix_a[z3 - 1].clear()
+                matrix_a[z3 - 1].extend(mask_a)
+            L = 0
+            result_ma = []
+            while L < len(matrix_a):
+                result_ma.append(matrix_a[L][1])
+                L = L + 1
+            result_a = ''.join(result_ma)
+            print(result_a)
+        else:
+            pass
+
+    return result_m, result_v, result_a
 
 
 pitch_truth = ['001',
@@ -268,10 +358,11 @@ error_truth = ['000',
 # returns command and value after correction
 #
 
-def decoder_lv1(signal, value):
+def decoder(signal, value, acceleration):
     d_signal = signal[5:]
     d_value = int(value[8:], 2)
     # d_value = '228'
+    d_acceleration = int(acceleration[8:], 2)
     if d_signal in error_truth:
         d_signal = 'Incorrect instruction: '
     elif d_signal in pitch_truth:
@@ -280,11 +371,39 @@ def decoder_lv1(signal, value):
         d_signal = 'Heel: '
     elif d_signal in yaw_truth:
         d_signal = 'Yaw: '
+
     if d_value in range(0, 181):
         d_value = '%s degrees' %(d_value)
     else:
         d_value = ('Angle (%s degrees) is out of range' %(d_value))
-    print(d_signal, d_value)
+
+    if d_acceleration in range(1, 256):
+        d_acceleration = '%s mps/second' % (d_acceleration)
+    else:
+        d_acceleration = ('Acceleration rate (%s m/s^2) is out of range' % (d_acceleration))
+
+    # print(d_signal, d_value, d_acceleration)
+    return d_signal, d_value, d_acceleration
+
+ ####
+ #
+ # statistics function for last resort errors correction
+ #
+
+def statistics(trials):
+    k = 0
+    M_act = []
+    M_ang = []
+    M_acc = []
+    while (k <= trials):
+        act, ang, acc = input_check()
+        out_act, out_ang, out_acc = encoder(act, ang, acc)
+        env_act, env_ang, env_acc = ones_environment(out_act, out_ang, out_acc)
+        in_act, in_ang, in_acc = decoder(env_act, env_ang, env_acc)
+        M_act.append(in_act)
+        M_ang.append(in_ang)
+        M_acc.append(in_acc)
+        k = k + 1
 
 
 
@@ -294,11 +413,13 @@ def decoder_lv1(signal, value):
 #
 
 def main():
-    signal, value = input_check()
-    out_sig, out_val = encoder(signal, value)
+    K = 100000
+    statistics(K)
+    # action, angle, acceleration = input_check()
+    # out_act, out_ang, out_acc = encoder(action, angle, acceleration)
     # zeroes_environment(out_sig, out_val)
-    c_sig, c_val = ones_environment(out_sig, out_val)
-    decoder_lv1(c_sig, c_val)
+    # c_act, c_ang, c_acc = ones_environment(out_act, out_ang, out_acc)
+    # decoder(c_act, c_ang, c_acc)
 
 
 ####
