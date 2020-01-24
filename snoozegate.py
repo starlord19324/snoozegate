@@ -165,7 +165,7 @@ def zeroes_environment(signal, value, acceleration):
                 result_mm.append(matrix_s[L][1])
                 L = L + 1
             result_m = ''.join(result_mm)
-            print(result_m)
+            # print(result_m)
         else:
             pass
 
@@ -192,7 +192,7 @@ def zeroes_environment(signal, value, acceleration):
                 result_mv.append(matrix_v[L][1])
                 L = L + 1
             result_v = ''.join(result_mv)
-            print(result_v)
+            # print(result_v)
         else:
             pass
 
@@ -218,7 +218,7 @@ def zeroes_environment(signal, value, acceleration):
                 result_ma.append(matrix_a[L][1])
                 L = L + 1
             result_a = ''.join(result_ma)
-            print(result_a)
+            # print(result_a)
         else:
             pass
 
@@ -277,7 +277,7 @@ def ones_environment(signal, value, acceleration):
                 result_mm.append(matrix_s[L][1])
                 L = L + 1
             result_m = ''.join(result_mm)
-            print(result_m)
+            # print(result_m)
         else:
             pass
 
@@ -304,7 +304,7 @@ def ones_environment(signal, value, acceleration):
                 result_mv.append(matrix_v[L][1])
                 L = L + 1
             result_v = ''.join(result_mv)
-            print(result_v)
+            # print(result_v)
         else:
             pass
 
@@ -330,7 +330,7 @@ def ones_environment(signal, value, acceleration):
                 result_ma.append(matrix_a[L][1])
                 L = L + 1
             result_a = ''.join(result_ma)
-            print(result_a)
+            # print(result_a)
         else:
             pass
 
@@ -395,17 +395,25 @@ def statistics(trials):
     M_act = []
     M_ang = []
     M_acc = []
-    while (k <= trials):
+    while (k < trials):
         act, ang, acc = input_check()
         out_act, out_ang, out_acc = encoder(act, ang, acc)
         env_act, env_ang, env_acc = ones_environment(out_act, out_ang, out_acc)
-        in_act, in_ang, in_acc = decoder(env_act, env_ang, env_acc)
-        M_act.append(in_act)
-        M_ang.append(in_ang)
-        M_acc.append(in_acc)
+        # in_act, in_ang, in_acc = decoder(env_act, env_ang, env_acc)
+        M_act.append(env_act)
+        M_ang.append(env_ang)
+        M_acc.append(env_acc)
         k = k + 1
+    Mact = Counter(M_act)
+    Mang = Counter(M_ang)
+    Macc = Counter(M_acc)
 
+    # print(Mact)
+    # print(Mang)
+    # print(Macc)
 
+    Ract = ''.join(Mact)
+    print(Ract)
 
 ####
 #
@@ -413,7 +421,7 @@ def statistics(trials):
 #
 
 def main():
-    K = 100000
+    K = 1000000
     statistics(K)
     # action, angle, acceleration = input_check()
     # out_act, out_ang, out_acc = encoder(action, angle, acceleration)
