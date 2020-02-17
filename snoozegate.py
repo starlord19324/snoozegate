@@ -408,12 +408,12 @@ def statistics(trials):
     Mang = Counter(M_ang)
     Macc = Counter(M_acc)
 
-    # print(Mact)
-    # print(Mang)
-    # print(Macc)
-
-    Ract = ''.join(Mact)
-    print(Ract)
+    print(Mact)
+    print(Mang)
+    print(Macc)
+    #
+    # Ract = ''.join(Mact)
+    # print(Ract)
 
 ####
 #
@@ -421,7 +421,7 @@ def statistics(trials):
 #
 
 def main():
-    K = 1000000
+    K = 10000
     statistics(K)
     # action, angle, acceleration = input_check()
     # out_act, out_ang, out_acc = encoder(action, angle, acceleration)
