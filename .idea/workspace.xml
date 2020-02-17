@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e3663c7-606d-4574-8c8e-084c98a8fe58" name="Default Changelist" comment="Acceleration parameter has been added&#10;Created statistics function for final result comparison">
-      <change afterPath="$PROJECT_DIR$/.idea/rSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python.iml" afterDir="false" />
+    <list default="true" id="6e3663c7-606d-4574-8c8e-084c98a8fe58" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/snoozegate.ui" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/snoozegate.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snoozegate.py" beforeDir="false" afterPath="$PROJECT_DIR$/snoozegate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,14 +21,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>z1</find>
-      <find>matrix2</find>
-      <find>result_m2</find>
-      <find>result_v</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -42,9 +34,35 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Noivern\PycharmProjects\snoozegate\GUI" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GUI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="noise" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -68,6 +86,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.noise" />
       </list>
     </recent_temporary>
@@ -188,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579800446186</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="UI Created">
+      <created>1581954090530</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1581954090530</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -241,41 +267,47 @@
     <MESSAGE value="Some comments + copyright" />
     <MESSAGE value="Decoder function created&#10;Needed to add 3rd parameter - acceleration" />
     <MESSAGE value="Acceleration parameter has been added&#10;Created statistics function for final result comparison" />
-    <option name="LAST_COMMIT_MESSAGE" value="Acceleration parameter has been added&#10;Created statistics function for final result comparison" />
+    <MESSAGE value="UI Created" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI Created" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="909" y="89" key="CommitChangelistDialog2" timestamp="1581953805871">
+    <state x="909" y="89" key="CommitChangelistDialog2" timestamp="1581954090077">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="909" y="89" key="CommitChangelistDialog2/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581953805871" />
+    <state x="909" y="89" key="CommitChangelistDialog2/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581954090077" />
     <state x="619" y="279" key="FileChooserDialogImpl" timestamp="1581945120547">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="619" y="279" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1581945120547" />
-    <state width="1659" height="175" key="GridCell.Tab.0.bottom" timestamp="1581953544606">
+    <state width="1217" height="175" key="GridCell.Tab.0.bottom" timestamp="1581974834742">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="175" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581953544606" />
+    <state width="1217" height="175" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581974834742" />
     <state width="1659" height="175" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1581945315539" />
-    <state width="1659" height="175" key="GridCell.Tab.0.center" timestamp="1581953544606">
+    <state width="1217" height="175" key="GridCell.Tab.0.center" timestamp="1581974834742">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="175" key="GridCell.Tab.0.center/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581953544606" />
+    <state width="1217" height="175" key="GridCell.Tab.0.center/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581974834742" />
     <state width="1659" height="175" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1581945315539" />
-    <state width="1659" height="175" key="GridCell.Tab.0.left" timestamp="1581953544606">
+    <state width="1217" height="175" key="GridCell.Tab.0.left" timestamp="1581974834742">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="175" key="GridCell.Tab.0.left/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581953544606" />
+    <state width="1217" height="175" key="GridCell.Tab.0.left/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581974834742" />
     <state width="1659" height="175" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1581945315539" />
-    <state width="1659" height="175" key="GridCell.Tab.0.right" timestamp="1581953544606">
+    <state width="1217" height="175" key="GridCell.Tab.0.right" timestamp="1581974834742">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="175" key="GridCell.Tab.0.right/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581953544606" />
+    <state width="1217" height="175" key="GridCell.Tab.0.right/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581974834742" />
     <state width="1659" height="175" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1581945315539" />
-    <state x="341" y="147" key="SettingsEditor" timestamp="1581945142012">
+    <state x="341" y="147" key="SettingsEditor" timestamp="1581954849215">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state x="341" y="147" key="SettingsEditor/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581954849215" />
     <state x="341" y="147" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1581945142012" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1581954093856">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581954093856" />
     <state x="536" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1581945065514">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

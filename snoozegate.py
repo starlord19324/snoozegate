@@ -399,21 +399,61 @@ def statistics(trials):
         act, ang, acc = input_check()
         out_act, out_ang, out_acc = encoder(act, ang, acc)
         env_act, env_ang, env_acc = ones_environment(out_act, out_ang, out_acc)
-        # in_act, in_ang, in_acc = decoder(env_act, env_ang, env_acc)
-        M_act.append(env_act)
-        M_ang.append(env_ang)
-        M_acc.append(env_acc)
+        in_act, in_ang, in_acc = decoder(env_act, env_ang, env_acc)
+        M_act.append(in_act)
+        M_ang.append(in_ang)
+        M_acc.append(in_acc)
         k = k + 1
     Mact = Counter(M_act)
     Mang = Counter(M_ang)
     Macc = Counter(M_acc)
 
+    act_set = set(M_act)
+    ang_set = set(M_ang)
+    acc_set = set(M_acc)
+
+    most_common_act = None
+    qty_most_common = 0
+    for item1 in act_set:
+        qty = M_act.count(item1)
+        if qty > qty_most_common:
+            qty_most_common = qty
+            most_common_act = item1
+    # print(most_common_act)
+
+    most_common_ang = None
+    qty_most_common = 0
+    for item2 in ang_set:
+        qty = M_ang.count(item2)
+        if qty > qty_most_common:
+            qty_most_common = qty
+            most_common_ang = item2
+    # print(most_common_ang)
+
+    most_common_acc = None
+    qty_most_common = 0
+    for item3 in acc_set:
+        qty = M_acc.count(item3)
+        if qty > qty_most_common:
+            qty_most_common = qty
+            most_common_acc = item3
+    # print(most_common_acc)
+
+    # print(Mact)
+    # print(Mang)
+    # print(Macc)
+
+    Mact = str(Mact)
+    Mang = str(Mang)
+    Macc = str(Macc)
+
     print(Mact)
     print(Mang)
     print(Macc)
-    #
-    # Ract = ''.join(Mact)
-    # print(Ract)
+
+
+    Ract = ''.join(most_common_act) + ''.join(most_common_ang) + ', ' + ''.join(most_common_acc)
+    print(Ract)
 
 ####
 #

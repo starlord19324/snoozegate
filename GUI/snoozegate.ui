@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>483</width>
-    <height>833</height>
+    <width>511</width>
+    <height>542</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -49,11 +49,11 @@ QLabel {
 	border-color: (67, 74, 133);
 }
 
-QRadioButton {
+QCheckBox {
 	background-color: rgb(219, 223, 255);
 	color: rgb(110, 111, 128);
-	width: 70px;
-	height: 60px;
+	width: 75px;
+	height: 50px;
 	font: Yu Gothic UI Semilight;
 	font-size: 20px;
 	font-height: bold;
@@ -62,83 +62,37 @@ QRadioButton {
 }
 
 
-QRadioButton:hover {
+QCheckBox:hover {
 	background-color: rgb(143, 154,255);
 	border-color: (67, 74, 133);
 }
 
-QRadiolButton:pressed {
+QCheckBox:pressed {
 	background-color: rgb(67, 74, 133);
 	color: rgb(219, 223, 255);
 	border-color: (219, 223, 255);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>100</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Кут (0-90):</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>140</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Прискорення:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>100</y>
-      <width>113</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>140</y>
-      <width>113</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>180</y>
-      <width>221</width>
+      <y>20</y>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Розмір пакету сигналів:</string>
+     <string>Команда:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_3">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>180</y>
-      <width>113</width>
+      <x>140</x>
+      <y>20</y>
+      <width>321</width>
       <height>31</height>
      </rect>
     </property>
@@ -146,100 +100,21 @@ QRadiolButton:pressed {
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>430</y>
-      <width>121</width>
-      <height>41</height>
+      <x>160</x>
+      <y>120</y>
+      <width>191</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>СТАРТ</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>230</y>
-      <width>201</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Рівень зашумленості:</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>10</y>
-      <width>411</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QRadioButton" name="radioButton_2">
-       <property name="text">
-        <string> Крен</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="radioButton_3">
-       <property name="text">
-        <string> Рискання</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="radioButton">
-       <property name="text">
-        <string> Тангаж</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>230</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QRadioButton" name="radioButton_4">
-       <property name="text">
-        <string>1</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="radioButton_5">
-       <property name="text">
-        <string>2</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="radioButton_6">
-       <property name="text">
-        <string>3</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>540</y>
+      <y>240</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -252,7 +127,7 @@ QRadiolButton:pressed {
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>630</y>
+      <y>330</y>
       <width>111</width>
       <height>21</height>
      </rect>
@@ -264,9 +139,9 @@ QRadiolButton:pressed {
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>490</y>
-      <width>351</width>
+      <x>40</x>
+      <y>200</y>
+      <width>431</width>
       <height>23</height>
      </rect>
     </property>
@@ -274,29 +149,12 @@ QRadiolButton:pressed {
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>570</y>
-      <width>421</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 0, 0);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>660</y>
-      <width>421</width>
+      <y>360</y>
+      <width>431</width>
       <height>161</height>
      </rect>
     </property>
@@ -304,35 +162,46 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: rgb(0, 0, 0);
 color: rgb(255, 255, 255);</string>
     </property>
-    <property name="text">
-     <string/>
-    </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QPlainTextEdit" name="plainTextEdit_2">
     <property name="geometry">
      <rect>
       <x>40</x>
       <y>270</y>
-      <width>411</width>
-      <height>151</height>
+      <width>431</width>
+      <height>51</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QRadioButton" name="radioButton_7">
-       <property name="text">
-        <string> &quot;Нерозумне&quot; кодування</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="radioButton_8">
-       <property name="text">
-        <string> &quot;Розумне кодування&quot;</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>60</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Розмір пакету:</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
