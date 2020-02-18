@@ -114,7 +114,7 @@ QCheckBox:pressed {
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>240</y>
+      <y>300</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -127,7 +127,7 @@ QCheckBox:pressed {
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>330</y>
+      <y>390</y>
       <width>111</width>
       <height>21</height>
      </rect>
@@ -136,26 +136,13 @@ QCheckBox:pressed {
      <string>Статистика:</string>
     </property>
    </widget>
-   <widget class="QProgressBar" name="progressBar">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>200</y>
-      <width>431</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="value">
-     <number>0</number>
-    </property>
-   </widget>
    <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>360</y>
+      <y>420</y>
       <width>431</width>
-      <height>161</height>
+      <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -167,7 +154,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>270</y>
+      <y>330</y>
       <width>431</width>
       <height>51</height>
      </rect>
@@ -201,6 +188,33 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Розмір пакету:</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>210</y>
+      <width>431</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>180</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Прогрес:</string>
     </property>
    </widget>
   </widget>

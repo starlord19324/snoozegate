@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'C:\Users\Noivern\PycharmProjects\snoozegate\GUI\snoozegate.ui'
 #
-# Created: Mon Feb 17 22:19:32 2020
+# Created: Tue Feb 18 03:15:19 2020
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -83,22 +83,18 @@ class Ui_MainWindow(object):
         self.pushButton_4.setGeometry(QtCore.QRect(160, 120, 191, 51))
         self.pushButton_4.setObjectName("pushButton_4")
         self.label = QtGui.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(40, 240, 101, 21))
+        self.label.setGeometry(QtCore.QRect(40, 300, 101, 21))
         self.label.setObjectName("label")
         self.label_6 = QtGui.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(40, 330, 111, 21))
+        self.label_6.setGeometry(QtCore.QRect(40, 390, 111, 21))
         self.label_6.setObjectName("label_6")
-        self.progressBar = QtGui.QProgressBar(self.centralwidget)
-        self.progressBar.setGeometry(QtCore.QRect(40, 200, 431, 23))
-        self.progressBar.setProperty("value", 0)
-        self.progressBar.setObjectName("progressBar")
         self.plainTextEdit = QtGui.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit.setGeometry(QtCore.QRect(40, 360, 431, 161))
+        self.plainTextEdit.setGeometry(QtCore.QRect(40, 420, 431, 101))
         self.plainTextEdit.setStyleSheet("background-color: rgb(0, 0, 0);\n"
 "color: rgb(255, 255, 255);")
         self.plainTextEdit.setObjectName("plainTextEdit")
         self.plainTextEdit_2 = QtGui.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_2.setGeometry(QtCore.QRect(40, 270, 431, 51))
+        self.plainTextEdit_2.setGeometry(QtCore.QRect(40, 330, 431, 51))
         self.plainTextEdit_2.setStyleSheet("background-color: rgb(0, 0, 0);\n"
 "color: rgb(255, 255, 255);")
         self.plainTextEdit_2.setObjectName("plainTextEdit_2")
@@ -109,6 +105,14 @@ class Ui_MainWindow(object):
         self.label_5 = QtGui.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(40, 60, 141, 31))
         self.label_5.setObjectName("label_5")
+        self.plainTextEdit_3 = QtGui.QPlainTextEdit(self.centralwidget)
+        self.plainTextEdit_3.setGeometry(QtCore.QRect(40, 210, 431, 81))
+        self.plainTextEdit_3.setStyleSheet("background-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 255, 255);")
+        self.plainTextEdit_3.setObjectName("plainTextEdit_3")
+        self.label_2 = QtGui.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(40, 180, 101, 21))
+        self.label_2.setObjectName("label_2")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtGui.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -124,6 +128,7 @@ class Ui_MainWindow(object):
         self.label.setText(QtGui.QApplication.translate("MainWindow", "Результат:", None, QtGui.QApplication.UnicodeUTF8))
         self.label_6.setText(QtGui.QApplication.translate("MainWindow", "Статистика:", None, QtGui.QApplication.UnicodeUTF8))
         self.label_5.setText(QtGui.QApplication.translate("MainWindow", "Розмір пакету:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("MainWindow", "Прогрес:", None, QtGui.QApplication.UnicodeUTF8))
 
 
 if __name__ == "__main__":

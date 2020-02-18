@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e3663c7-606d-4574-8c8e-084c98a8fe58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="6e3663c7-606d-4574-8c8e-084c98a8fe58" name="Default Changelist" comment="Major updates for UI and logics. Program finally works as I wanted.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/snoozegate.ui" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/snoozegate.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snoozegate.py" beforeDir="false" afterPath="$PROJECT_DIR$/snoozegate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581954090530</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Major updates for UI and logics. Program finally works as I wanted.">
+      <created>1581975161031</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1581975161031</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -268,49 +273,51 @@
     <MESSAGE value="Decoder function created&#10;Needed to add 3rd parameter - acceleration" />
     <MESSAGE value="Acceleration parameter has been added&#10;Created statistics function for final result comparison" />
     <MESSAGE value="UI Created" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI Created" />
+    <MESSAGE value="Major updates for UI and logics. Program finally works as I wanted." />
+    <option name="LAST_COMMIT_MESSAGE" value="Major updates for UI and logics. Program finally works as I wanted." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="909" y="89" key="CommitChangelistDialog2" timestamp="1581954090077">
+    <state x="514" y="130" key="CommitChangelistDialog2" timestamp="1581986763538">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="909" y="89" key="CommitChangelistDialog2/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581954090077" />
+    <state x="514" y="130" key="CommitChangelistDialog2/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581986763538" />
     <state x="619" y="279" key="FileChooserDialogImpl" timestamp="1581945120547">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="619" y="279" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1581945120547" />
-    <state width="1217" height="175" key="GridCell.Tab.0.bottom" timestamp="1581974834742">
+    <state width="1659" height="174" key="GridCell.Tab.0.bottom" timestamp="1581988901970">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1217" height="175" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581974834742" />
+    <state width="1659" height="174" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581988901970" />
     <state width="1659" height="175" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1581945315539" />
-    <state width="1217" height="175" key="GridCell.Tab.0.center" timestamp="1581974834742">
+    <state width="1659" height="174" key="GridCell.Tab.0.center" timestamp="1581988901969">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1217" height="175" key="GridCell.Tab.0.center/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581974834742" />
+    <state width="1659" height="174" key="GridCell.Tab.0.center/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581988901969" />
     <state width="1659" height="175" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1581945315539" />
-    <state width="1217" height="175" key="GridCell.Tab.0.left" timestamp="1581974834742">
+    <state width="1659" height="174" key="GridCell.Tab.0.left" timestamp="1581988901969">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1217" height="175" key="GridCell.Tab.0.left/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581974834742" />
+    <state width="1659" height="174" key="GridCell.Tab.0.left/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581988901969" />
     <state width="1659" height="175" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1581945315539" />
-    <state width="1217" height="175" key="GridCell.Tab.0.right" timestamp="1581974834742">
+    <state width="1659" height="174" key="GridCell.Tab.0.right" timestamp="1581988901970">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1217" height="175" key="GridCell.Tab.0.right/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581974834742" />
+    <state width="1659" height="174" key="GridCell.Tab.0.right/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581988901970" />
     <state width="1659" height="175" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1581945315539" />
     <state x="341" y="147" key="SettingsEditor" timestamp="1581954849215">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="341" y="147" key="SettingsEditor/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581954849215" />
     <state x="341" y="147" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1581945142012" />
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1581954093856">
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1581975164340">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581954093856" />
-    <state x="536" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1581945065514">
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581975164340" />
+    <state x="536" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1581983161321">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state x="536" y="329" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/1680.0.1024.728@0.0.1680.1010" timestamp="1581983161321" />
     <state x="536" y="329" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1581945065514" />
     <state x="923" y="217" key="search.everywhere.popup" timestamp="1581953773033">
       <screen x="0" y="0" width="1680" height="1010" />

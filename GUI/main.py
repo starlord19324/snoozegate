@@ -34,9 +34,11 @@ def input_check(action, angle, acceleration):
     # acceleration = int('51')
     if action in signal_lib and angle in range(0, 91) and acceleration in range(1, 256):
         # print(signal,value)
+        ui.plainTextEdit_3.setPlainText(str(action) + '\n' + str(angle) + '\n' + str(acceleration) + '\n')
         return action, angle, acceleration
     else:
-        print('Incorrect instruction')
+        ui.plainTextEdit_3.appendPlainText('Incorrect instruction')
+
 def encoder(action, angle, acceleration):
     act = '00000%s' %(action)
 
@@ -84,6 +86,7 @@ def encoder(action, angle, acceleration):
     acc = '00000000%s' %(acc)
 
     # print(act, ang, acc)
+    ui.plainTextEdit_3.appendPlainText(str(act) + '\n' + str(ang) +'\n' + str(acc) + '\n')
     return act, ang, acc
 
 ####
@@ -139,6 +142,8 @@ def zeroes_environment(signal, value, acceleration):
                 L = L + 1
             result_m = ''.join(result_mm)
             # print(result_m)
+            ui.plainTextEdit_3.appendPlainText(str(result_m) + '\n')
+
         else:
             pass
 
@@ -166,6 +171,7 @@ def zeroes_environment(signal, value, acceleration):
                 L = L + 1
             result_v = ''.join(result_mv)
             # print(result_v)
+            ui.plainTextEdit_3.appendPlainText(str(result_v) + '\n')
         else:
             pass
 
@@ -192,6 +198,7 @@ def zeroes_environment(signal, value, acceleration):
                 L = L + 1
             result_a = ''.join(result_ma)
             # print(result_a)
+            ui.plainTextEdit_3.appendPlainText(str(result_a) + '\n')
         else:
             pass
 
@@ -251,6 +258,7 @@ def ones_environment(signal, value, acceleration):
                 L = L + 1
             result_m = ''.join(result_mm)
             # print(result_m)
+            ui.plainTextEdit_3.appendPlainText(str(result_m) + '\n')
         else:
             pass
 
@@ -278,6 +286,7 @@ def ones_environment(signal, value, acceleration):
                 L = L + 1
             result_v = ''.join(result_mv)
             # print(result_v)
+            ui.plainTextEdit_3.appendPlainText(str(result_v) + '\n')
         else:
             pass
 
@@ -304,6 +313,7 @@ def ones_environment(signal, value, acceleration):
                 L = L + 1
             result_a = ''.join(result_ma)
             # print(result_a)
+            ui.plainTextEdit_3.appendPlainText(str(result_a) + '\n')
         else:
             pass
 
@@ -346,6 +356,7 @@ def decoder(signal, value, acceleration):
         d_acceleration = ('Рівень прискорення (%s mps/second) поза межами' % (d_acceleration))
 
     # print(d_signal, d_value, d_acceleration)
+    ui.plainTextEdit_3.appendPlainText(str(d_signal) + '\n' + str(d_value) + '\n' + str(d_acceleration) + '\n')
     return d_signal, d_value, d_acceleration
 
 def statistics(action, angle, acceleration, trials):
@@ -355,17 +366,24 @@ def statistics(action, angle, acceleration, trials):
     M_acc = []
     while (k < trials):
         act, ang, acc = input_check(action, angle, acceleration)
+        ui.plainTextEdit_3.appendPlainText(str(action) + '\n' + str(angle) + '\n' + str(acceleration) + '\n')
         out_act, out_ang, out_acc = encoder(act, ang, acc)
+        ui.plainTextEdit_3.appendPlainText(str(out_act) + '\n' + str(out_ang) + '\n' + str(out_acc) + '\n')
         env_act, env_ang, env_acc = ones_environment(out_act, out_ang, out_acc)
+        ui.plainTextEdit_3.appendPlainText(str(env_act) + '\n' + str(env_ang) + '\n' + str(env_acc) + '\n')
         in_act, in_ang, in_acc = decoder(env_act, env_ang, env_acc)
+        ui.plainTextEdit_3.appendPlainText(str(in_act) + '\n' + str(in_ang) + '\n' + str(in_acc) + '\n')
         M_act.append(in_act)
         M_ang.append(in_ang)
         M_acc.append(in_acc)
         k = k + 1
 
     Mact = Counter(M_act)
+    ui.plainTextEdit_3.appendPlainText(str(M_act) + '\n')
     Mang = Counter(M_ang)
+    ui.plainTextEdit_3.appendPlainText(str(M_ang) + '\n')
     Macc = Counter(M_acc)
+    ui.plainTextEdit_3.appendPlainText(str(M_acc) + '\n')
 
     act_set = set(M_act)
     ang_set = set(M_ang)
@@ -379,6 +397,7 @@ def statistics(action, angle, acceleration, trials):
             qty_most_common = qty
             most_common_act = item1
     # print(most_common_act)
+    ui.plainTextEdit_3.appendPlainText(str(most_common_act) + '\n')
 
     most_common_ang = None
     qty_most_common = 0
@@ -388,6 +407,7 @@ def statistics(action, angle, acceleration, trials):
             qty_most_common = qty
             most_common_ang = item2
     # print(most_common_ang)
+    ui.plainTextEdit_3.appendPlainText(str(most_common_ang) + '\n')
 
     most_common_acc = None
     qty_most_common = 0
@@ -397,6 +417,7 @@ def statistics(action, angle, acceleration, trials):
             qty_most_common = qty
             most_common_acc = item3
     # print(most_common_acc)
+    ui.plainTextEdit_3.appendPlainText(str(most_common_acc) + '\n')
 
     Mact = str(Mact)
     Mang = str(Mang)
@@ -411,8 +432,6 @@ def statistics(action, angle, acceleration, trials):
     # print(Ract)
 
     return Ract, Mact, Mang, Macc
-
-
 
 def main():
     text1 = ui.lineEdit_3.text()
@@ -429,6 +448,9 @@ def main():
     text2 = ui.lineEdit_4.text()
     trials = int(text2)
     Q, K, V, M = statistics(action, angle, acceleration, trials)
+    K = K[9:-2]
+    V = V[9:-2]
+    M = M[9:-2]
     ui.plainTextEdit.setPlainText(K + '\n' + V + '\n' + M)
     ui.plainTextEdit_2.setPlainText(Q)
 
