@@ -10,21 +10,48 @@ from collections import Counter
 # National Aviation University
 # 2019-2020 (c)
 
-# Create application
+# Створити додаток
 app = QtGui.QApplication(sys.argv)
 
-# Create form and init UI
+# Створити форму та ініціалізувати інтерфейс користувача
 MainWindow = QtGui.QMainWindow()
 ui = Ui_MainWindow()
 ui.setupUi(MainWindow)
 MainWindow.show()
 
-# Hook logic
-
+# Основна логіка
+####
+#
+# This matrix contains conventional signals for control of the UAV model
+# UAV model will be released soon
+# in plans: add octal and hexadecimal libs for variation of signals.
+# Explanation of signals meaning:
+# '001' - pitch
+# '010' - heel
+# '100' - yaw
+# command - 8 bit, value - 16 bit
 signal_lib = ['001',
               '010',
               '100']
 
+# pitch_truth = ['001',
+#                '101']
+#
+# heel_truth = ['010',
+#               '011']
+#
+# yaw_truth = ['100',
+#              '110']
+#
+# error_truth = ['000',
+#                '111']
+
+####
+#
+# input_check function performs verification of input data
+# e.g. signal is in library, value (angle of rotation) is in correct range
+# will be removed or modified when GUI will be ready - for this stage is useful for testing
+#
 def input_check(action, angle, acceleration):
     # action = input('Enter the action here: ')
     # angle = int(input('Determine the angle from 0 to 90 here: '))
@@ -39,50 +66,57 @@ def input_check(action, angle, acceleration):
     else:
         ui.plainTextEdit_3.appendPlainText('Incorrect instruction')
 
-def encoder(action, angle, acceleration):
-    act = '00000%s' %(action)
 
+####
+#
+# encoder function encodes obtained value into binary system and adds
+# excessive digits to prevent signal noising
+# will be also modified for octal and hexadecimal signal systems soon
+#
+def encoder(action, angle, acceleration):
+    # act = '00000%s' %(action)
+    act = action
     ang = bin(angle)
     ang = ang[2:]
 
-    if angle in range(0, 2):
-        ang = '0000000%s' % (ang)
-    elif angle in range(2, 4):
-        ang = '000000%s' % (ang)
-    elif angle in range(4, 8):
-        ang = '00000%s' % (ang)
-    elif angle in range(8, 16):
-        ang = '0000%s' % (ang)
-    elif angle in range(16, 32):
-        ang = '000%s' % (ang)
-    elif angle in range(32, 64):
-        ang = '00%s' % (ang)
-    elif angle in range(64, 128):
-        ang = '0%s' % (ang)
-    elif angle in range(128, 181):
-        ang = '%s' % (ang)
+    # if angle in range(0, 2):
+    #     ang = '0000000%s' % (ang)
+    # elif angle in range(2, 4):
+    #     ang = '000000%s' % (ang)
+    # elif angle in range(4, 8):
+    #     ang = '00000%s' % (ang)
+    # elif angle in range(8, 16):
+    #     ang = '0000%s' % (ang)
+    # elif angle in range(16, 32):
+    #     ang = '000%s' % (ang)
+    # elif angle in range(32, 64):
+    #     ang = '00%s' % (ang)
+    # elif angle in range(64, 128):
+    #     ang = '0%s' % (ang)
+    # elif angle in range(128, 181):
+    #     ang = '%s' % (ang)
     ang = '00000000%s' %(ang)
 
 
     acc = bin(acceleration)
     acc = acc[2:]
 
-    if acceleration in range(0, 2):
-        acc = '0000000%s' % (acc)
-    elif acceleration in range(2, 4):
-        acc = '000000%s' % (acc)
-    elif acceleration in range(4, 8):
-        acc = '00000%s' % (acc)
-    elif acceleration in range(8, 16):
-        acc = '0000%s' % (acc)
-    elif acceleration in range(16, 32):
-        acc = '000%s' % (acc)
-    elif acceleration in range(32, 64):
-        acc = '00%s' % (acc)
-    elif acceleration in range(64, 128):
-        acc = '0%s' % (acc)
-    elif acceleration in range(128, 181):
-        acc = '%s' % (acc)
+    # if acceleration in range(0, 2):
+    #     acc = '0000000%s' % (acc)
+    # elif acceleration in range(2, 4):
+    #     acc = '000000%s' % (acc)
+    # elif acceleration in range(4, 8):
+    #     acc = '00000%s' % (acc)
+    # elif acceleration in range(8, 16):
+    #     acc = '0000%s' % (acc)
+    # elif acceleration in range(16, 32):
+    #     acc = '000%s' % (acc)
+    # elif acceleration in range(32, 64):
+    #     acc = '00%s' % (acc)
+    # elif acceleration in range(64, 128):
+    #     acc = '0%s' % (acc)
+    # elif acceleration in range(128, 181):
+    #     acc = '%s' % (acc)
     acc = '00000000%s' %(acc)
 
     # print(act, ang, acc)
@@ -96,7 +130,6 @@ def encoder(action, angle, acceleration):
 # can be used in pair with ones_environment function to increase the distortion level
 # will be improved and modified for octal and hexadecimal systems
 #
-
 def zeroes_environment(signal, value, acceleration):
 
     s = list(signal)
@@ -212,7 +245,6 @@ def zeroes_environment(signal, value, acceleration):
 # can be used in pair with zeroes_environment function to increase the distortion level
 # will be improved and modified for octal and hexadecimal systems
 #
-
 def ones_environment(signal, value, acceleration):
 
     s = list(signal)
@@ -331,6 +363,13 @@ yaw_truth = ['100',
 error_truth = ['000',
                '111']
 
+####
+#
+# decoder function decodes distorted signals
+# removes redundant digits
+# performs error correction in correspondence with truth tables
+# returns command and value after correction
+#
 def decoder(signal, value, acceleration):
     d_signal = signal[5:]
     d_value = int(value[8:], 2)
@@ -359,6 +398,10 @@ def decoder(signal, value, acceleration):
     ui.plainTextEdit_3.appendPlainText(str(d_signal) + '\n' + str(d_value) + '\n' + str(d_acceleration) + '\n')
     return d_signal, d_value, d_acceleration
 
+ ####
+ #
+ # statistics function for last resort errors correction
+ #
 def statistics(action, angle, acceleration, trials):
     k = 0
     M_act = []
@@ -432,7 +475,10 @@ def statistics(action, angle, acceleration, trials):
     # print(Ract)
 
     return Ract, Mact, Mang, Macc
-
+####
+#
+# main function - runs called functions together in defined sequence
+#
 def main():
     text1 = ui.lineEdit_3.text()
     signal = str(text1)
@@ -454,7 +500,7 @@ def main():
     ui.plainTextEdit.setPlainText(K + '\n' + V + '\n' + M)
     ui.plainTextEdit_2.setPlainText(Q)
 
-
+# Call of the main function
 ui.pushButton_4.clicked.connect( main )
 # Run main loop
 sys.exit(app.exec_())

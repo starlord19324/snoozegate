@@ -389,7 +389,6 @@ def decoder(signal, value, acceleration):
  #
  # statistics function for last resort errors correction
  #
-
 def statistics(trials):
     k = 0
     M_act = []
