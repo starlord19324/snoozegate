@@ -79,44 +79,44 @@ def encoder(action, angle, acceleration):
     ang = bin(angle)
     ang = ang[2:]
 
-    # if angle in range(0, 2):
-    #     ang = '0000000%s' % (ang)
-    # elif angle in range(2, 4):
-    #     ang = '000000%s' % (ang)
-    # elif angle in range(4, 8):
-    #     ang = '00000%s' % (ang)
-    # elif angle in range(8, 16):
-    #     ang = '0000%s' % (ang)
-    # elif angle in range(16, 32):
-    #     ang = '000%s' % (ang)
-    # elif angle in range(32, 64):
-    #     ang = '00%s' % (ang)
-    # elif angle in range(64, 128):
-    #     ang = '0%s' % (ang)
-    # elif angle in range(128, 181):
-    #     ang = '%s' % (ang)
+    if angle in range(0, 2):
+        ang = '0000000%s' % (ang)
+    elif angle in range(2, 4):
+        ang = '000000%s' % (ang)
+    elif angle in range(4, 8):
+        ang = '00000%s' % (ang)
+    elif angle in range(8, 16):
+        ang = '0000%s' % (ang)
+    elif angle in range(16, 32):
+        ang = '000%s' % (ang)
+    elif angle in range(32, 64):
+        ang = '00%s' % (ang)
+    elif angle in range(64, 128):
+        ang = '0%s' % (ang)
+    elif angle in range(128, 181):
+        ang = '%s' % (ang)
     ang = '00000000%s' %(ang)
 
 
     acc = bin(acceleration)
     acc = acc[2:]
 
-    # if acceleration in range(0, 2):
-    #     acc = '0000000%s' % (acc)
-    # elif acceleration in range(2, 4):
-    #     acc = '000000%s' % (acc)
-    # elif acceleration in range(4, 8):
-    #     acc = '00000%s' % (acc)
-    # elif acceleration in range(8, 16):
-    #     acc = '0000%s' % (acc)
-    # elif acceleration in range(16, 32):
-    #     acc = '000%s' % (acc)
-    # elif acceleration in range(32, 64):
-    #     acc = '00%s' % (acc)
-    # elif acceleration in range(64, 128):
-    #     acc = '0%s' % (acc)
-    # elif acceleration in range(128, 181):
-    #     acc = '%s' % (acc)
+    if acceleration in range(0, 2):
+        acc = '0000000%s' % (acc)
+    elif acceleration in range(2, 4):
+        acc = '000000%s' % (acc)
+    elif acceleration in range(4, 8):
+        acc = '00000%s' % (acc)
+    elif acceleration in range(8, 16):
+        acc = '0000%s' % (acc)
+    elif acceleration in range(16, 32):
+        acc = '000%s' % (acc)
+    elif acceleration in range(32, 64):
+        acc = '00%s' % (acc)
+    elif acceleration in range(64, 128):
+        acc = '0%s' % (acc)
+    elif acceleration in range(128, 181):
+        acc = '%s' % (acc)
     acc = '00000000%s' %(acc)
 
     # print(act, ang, acc)
